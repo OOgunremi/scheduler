@@ -20,6 +20,7 @@ export const getInterview = (state, interview) => {
     "student": interview.student,
     "interviewer": state.interviewers[interview.interviewer]
   }
+  console.log('interviewObj = ', interviewObj)
 
-    return interviewObj;
+    return interviewObj;  
   }
