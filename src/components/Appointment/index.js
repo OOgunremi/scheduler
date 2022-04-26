@@ -7,7 +7,8 @@ import useVisualMode from "hooks/useVisualMode";
 import Status from "components/Status";
 import Confirm from "./Confirm";
 import Form from "components/Form";
-import { getInterviewerForDay } from "helpers/selectors";
+import { getInterviewersForDay } from "helpers/selectors";
+
 
 const Appointment = (props) => {
    const EMPTY = "EMPTY";
@@ -18,9 +19,26 @@ const Appointment = (props) => {
    const CONFIRM = "CONFIRM";
    const DELETING = "DELETING";
 
+   
+
    const { mode, transition, back } = useVisualMode(
       props.interview ? SHOW : EMPTY
     );
+
+    const save = (name, interviewer) => {
+      const interview = {
+        student: name,
+        interviewer
+      };
+      transition(SAVING);
+      props.bookInterview(props.id, interview).then(() => {
+ 
+         transition(SHOW)
+      })
+
+
+      //console.log('name = ', name, 'interviewer', interviewer)
+   };
 
   return ( 
       <article className="appointment">
@@ -30,7 +48,7 @@ const Appointment = (props) => {
         {mode === SAVING && <Status message="Saving"/>}
         {mode === DELETING && <Status message="Deleting"/>}
     {/* {mode === CONFIRM && <Confirm/>} */}
-        {mode === CREATE && <Form interviewers={[]} onCancel={() => {transition(EMPTY)}}/>}
+        {mode === CREATE && <Form interviewers={props.interviewers} onCancel={() => {transition(EMPTY)}} onSave={save}/>}
     {/* {mode === EDIT && <Form/>} */}
       </article>
    );

@@ -25,15 +25,15 @@ export const getInterview = (state, interview) => {
     return interviewObj;  
   }
 
-  export const getInterviewerForDay = (state, name) => {
-    //console.log('state = ', state, "day = ", day)
+  export const getInterviewersForDay = (state, name) => {
     const interviewersByDay = [];
     const filterDays = state.days.filter((weekDay) =>
       weekDay.name === name); 
-      if(!filterDays[0]) {return []};
-    filterDays[0].interviewers.forEach((interviewer) => {
-      interviewersByDay.push(state.interviewers[interviewer])
+      console.log(filterDays)
+      if(!filterDays[0] || state.days.length === 0) {return []};
+    filterDays[0].interviewers.forEach((id) => {
+      interviewersByDay.push(state.interviewers[id])
     });
-    console.log(interviewersByDay)
+    console.log('interviewersByDay = ', interviewersByDay)
       return interviewersByDay;
     }

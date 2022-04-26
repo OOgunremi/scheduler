@@ -6,9 +6,12 @@ const Form = (props) => {
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null)
   const reset = () => {setStudent('');   
-  setInterviewer(null)}
-  const cancel = () => {reset(); props.onCancel()}
-
+  setInterviewer(null)};
+  const cancel = () => {reset(); props.onCancel()};
+  
+  const handleSave = () => {
+    props.onSave(student, interviewer)
+  };
   return ( 
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
@@ -20,6 +23,7 @@ const Form = (props) => {
             placeholder="Enter Student Name"
             value={student}
             onChange={(e) => setStudent(e.target.value)}
+
           />
         </form>
         <InterviewerList 
@@ -30,7 +34,7 @@ const Form = (props) => {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={cancel} >Cancel</Button>
-          <Button confirm  onClick={props.onSave}>Save</Button>
+          <Button confirm  onClick={handleSave}>Save</Button>
         </section>
       </section>
     </main>
