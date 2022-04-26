@@ -32,22 +32,29 @@ const Appointment = (props) => {
       };
       transition(SAVING);
       props.bookInterview(props.id, interview).then(() => {
- 
          transition(SHOW)
       })
+   };
 
-
-      //console.log('name = ', name, 'interviewer', interviewer)
+   const handleDelete = () => {
+      transition(DELETING);
+      props.cancelInterview(props.id).then(() => {
+         transition(EMPTY);
+      })
    };
 
   return ( 
       <article className="appointment">
         <Header time={props.time}/>
         {mode === EMPTY && <Empty onAdd={ () => {transition(CREATE)}}/>}
-        {mode === SHOW && <Show student={props.interview.student} interviewer={props.interview.interviewer}/>}
+        {mode === SHOW && <Show 
+            student={props.interview.student} 
+            interviewer={props.interview.interviewer}
+            onDelete={() => {transition(CONFIRM)}}
+            />}
         {mode === SAVING && <Status message="Saving"/>}
         {mode === DELETING && <Status message="Deleting"/>}
-    {/* {mode === CONFIRM && <Confirm/>} */}
+      {mode === CONFIRM && <Confirm onCancel={() => {console.log('cancelled')}} onConfirm={handleDelete}/>}
         {mode === CREATE && <Form interviewers={props.interviewers} onCancel={() => {transition(EMPTY)}} onSave={save}/>}
     {/* {mode === EDIT && <Form/>} */}
       </article>
