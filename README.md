@@ -49,20 +49,22 @@ npm run storybook
 
 !["Screenshot of Booked Interviews"](https://github.com/OOgunremi/scheduler/blob/master/docs/Booked%20Interviews%20Snapshot.png)
 
+### Screenshot of Booked Interviews
 
 
 
 !["Screenshot of Booking Interview Page"](https://github.com/OOgunremi/scheduler/blob/master/docs/Booking%20Interview%20Snapshot.png)
 
+### Screenshot of Booking Interview Page
 
 
 
 !["Screenshot of Confirmation Page"](https://github.com/OOgunremi/scheduler/blob/master/docs/Confirmation%20Messages%20Snapshot.png)
 
-
+### Screenshot of Confirmation Page
 
 
 !["Screenshot of Error Message"](https://github.com/OOgunremi/scheduler/blob/master/docs/Error%20Message%20Snapshot%20Interviewer.png)
 
-
+### Screenshot of Error Message
 
