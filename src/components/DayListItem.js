@@ -2,9 +2,9 @@ import React from "react";
 import "components/DayListItem.scss" ;
 import classNames from "classnames";
 
-
-export default function DayListItem(props) {
-  // tracks the number of available booking slots
+// returns each days view for DayList to use
+const DayListItem = (props) => {
+  // Function tracks the number of available booking slots
   const formatSpots = (spots) => {
     if (spots === 0) {
       return 'no spots remaining';
@@ -28,3 +28,4 @@ export default function DayListItem(props) {
     </li>
   );
 }
+export default DayListItem;
