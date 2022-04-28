@@ -47,18 +47,22 @@ npm run storybook
 ```
 ## Product Snapshots
 
-!["Screenshot"](https://github.com/OOgunremi/scheduler/blob/master/docs/Booked%20Interviews%20Snapshot.png)
+!["Screenshot of Booked Interviews"](https://github.com/OOgunremi/scheduler/blob/master/docs/Booked%20Interviews%20Snapshot.png)
 
 
-!["Screenshot"](https://github.com/OOgunremi/scheduler/blob/master/docs/Booking%20Interview%20Snapshot.png)
 
 
-!["Screenshot"](https://github.com/OOgunremi/scheduler/blob/master/docs/Confirmation%20Messages%20Snapshot.png)
+!["Screenshot of Booking Interview Page"](https://github.com/OOgunremi/scheduler/blob/master/docs/Booking%20Interview%20Snapshot.png)
 
 
-!["Screenshot"](https://github.com/OOgunremi/scheduler/blob/master/docs/Error%20Message%20Snapshot%20Interviewer.png)
 
 
-!["Screenshot"](https://github.com/OOgunremi/scheduler/blob/master/docs/Error%20Message%20Snapshot%20Student.png)
+!["Screenshot of Confirmation Page"](https://github.com/OOgunremi/scheduler/blob/master/docs/Confirmation%20Messages%20Snapshot.png)
+
+
+
+
+!["Screenshot of Error Message"](https://github.com/OOgunremi/scheduler/blob/master/docs/Error%20Message%20Snapshot%20Interviewer.png)
+
 
 
