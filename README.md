@@ -45,12 +45,20 @@ npm test
 ```sh
 npm run storybook
 ```
-## Final Product
+## Product Snapshots
 
 !["Screenshot"](https://github.com/OOgunremi/scheduler/blob/master/docs/Booked%20Interviews%20Snapshot.png)
+
+
 !["Screenshot"](https://github.com/OOgunremi/scheduler/blob/master/docs/Booking%20Interview%20Snapshot.png)
+
+
 !["Screenshot"](https://github.com/OOgunremi/scheduler/blob/master/docs/Confirmation%20Messages%20Snapshot.png)
+
+
 !["Screenshot"](https://github.com/OOgunremi/scheduler/blob/master/docs/Error%20Message%20Snapshot%20Interviewer.png)
+
+
 !["Screenshot"](https://github.com/OOgunremi/scheduler/blob/master/docs/Error%20Message%20Snapshot%20Student.png)
 
 
