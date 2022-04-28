@@ -9,9 +9,9 @@ const Form = (props) => {
   const reset = () => {setStudent('');   
   setInterviewer(null)};
   const cancel = () => {reset(); props.onCancel()};
-  const handleSave = () => {
-    props.onSave(student, interviewer)
-  };
+  // const handleSave = () => {
+  //   props.onSave(student, interviewer)
+  // };
   
   function validate() {
     if (student === "") {
