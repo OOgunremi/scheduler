@@ -1,16 +1,41 @@
 describe("Appointment", () => {
 
   it("should book an interview",() => {
-  cy.visit("/")
-    .contains("[data-testid=day]", "Monday")
+  cy.request("GET", "/api/debug/reset")
+    .visit("/")
+    .contains("Monday")
     .get("[alt=Add]")
     .first()
-    .click()
-    .get('[data-testid="student-name-input"]')
-    .type("Lekan")
-    .get(':nth-child(1) > .interviewers__item-image')
-    .click("")
-    .get('.button--confirm')
+    .click();
+
+    cy.get("[data-testid=student-name-input]").type("Lydia Miller-Jones")
+    cy.get("[alt='Sylvia Palmer']").click();
+
+    cy.contains("Save").click();
+
+    cy.contains(".appointment__card--show", "Lydia Miller-Jones");
+    cy.contains(".appointment__card--show", "Sylvia Palmer");
 
   });
+  it("Should edit an interview", () => {
+    cy.get("[alt=Edit]")
+      .first()
+      .click({force: true});
+
+    cy.get("[data-testid=student-name-input]")
+      .clear()
+      .type("Lydia")
+
+    cy.get("[alt='Tori Malcolm']").click();
+
+    cy.contains("Save").click();
+
+    cy.contains(".appointment__card--show", "Lydia");
+    cy.contains(".appointment__card--show", "Tori Malcolm");
+  });
+  
+
+
+
+
 });
