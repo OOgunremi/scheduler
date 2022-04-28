@@ -3,15 +3,16 @@ import "components/DayListItem.scss" ;
 import classNames from "classnames";
 
 
-
-
-
 export default function DayListItem(props) {
-  // console.log(props);
+  // tracks the number of available booking slots
   const formatSpots = (spots) => {
-    if (spots === 0) { return 'no spots remaining' }
-    if (spots === 1) { return '1 spot remaining' }
-    if (spots === 2) { return '2 spots remaining' }
+    if (spots === 0) {
+      return 'no spots remaining';
+    } else if (spots === 1) {
+      return '1 spot remaining';
+    } else {
+      return `${spots} spots remaining`;
+    }
   };
 
   const dayClass = classNames("day-list__item", {

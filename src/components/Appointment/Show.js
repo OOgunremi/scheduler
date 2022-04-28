@@ -1,5 +1,6 @@
 import React from "react";
 
+// Show mode components
 const Show = (props) => {
 
   return ( 

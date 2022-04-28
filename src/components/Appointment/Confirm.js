@@ -1,6 +1,7 @@
 import React from "react";
 import  Button from "components/Button.js"
 
+// Confirmation mode components
 const Confirm = (props) => {
   return ( 
     
