@@ -1,4 +1,3 @@
-
 // For getting  appointments for day
 export const getAppointmentsForDay = (state, day) => {
   const appointmentByDay = [];
@@ -9,7 +8,7 @@ export const getAppointmentsForDay = (state, day) => {
   }
   filterDays[0].appointments.forEach((id) => {
     appointmentByDay.push(state.appointments[id]);
-  })
+  });
 
   return appointmentByDay;
 };
@@ -20,7 +19,7 @@ export const getInterview = (state, interview) => {
 
   const interviewObj = {
     student: interview.student,
-    interviewer: state.interviewers[interview.interviewer]
+    interviewer: state.interviewers[interview.interviewer],
   };
 
   return interviewObj;
