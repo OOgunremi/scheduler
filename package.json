@@ -18,7 +18,7 @@
     "storybook": "start-storybook -p 9009 -s public --ci",
     "build-storybook": "build-storybook -s public",
     "cypress": "cypress open -P .",
-    "lint": "eslint '**/*.j'"
+    "lint": "eslint '**/*.js'"
   },
   "browserslist": {
     "production": [
