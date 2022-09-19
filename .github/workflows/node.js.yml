@@ -18,6 +18,18 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        # Make sure the actual branch is checked out when running on pull requests
+        ref: ${{ github.head_ref }}
+
+    - name: Prettify code
+      uses: creyD/prettier_action@v4.2
+      with:
+        # This part is also where you can pass other options, for example:
+        prettier_options: --write **/*.{js,md}
+
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -25,5 +37,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm i
-    - run: npm test
     - run: npm run build --if-present
